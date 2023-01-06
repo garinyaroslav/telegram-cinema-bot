@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: #f3f3f3;
+} */
+
+.center {
+    width: 800px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.wrapper.line {
+    background-color: #008040;
+    color: white;
+}
+
+.wrapper {
+    margin-bottom: 30px;
+}
+
+.wrapper h1 {
+    margin: 0;
+    font: 40px "Times New Roman"
+}
+
+.wrapper h2 {
+    margin: 0;
+    font: 25px "Times New Roman"
+}
+
+.wrapper p {
+    font: 16px/1.4 arial;
+    text-align: justify;
+}
+
