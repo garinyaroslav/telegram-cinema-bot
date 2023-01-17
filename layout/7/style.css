@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    border: 2px solid rgb(95, 95, 95);
+    margin: 300px auto;
+    background-color: rgb(233, 210, 37);
+}
+
+ @keyframes animA {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+ @keyframes animB {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} 
+
+@keyframes animC {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.A {
+    transform-origin: -125px center;
+    animation: animA 8s infinite linear;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    border: 2px solid black;
+    position: absolute;
+    right: 625px;
+    top: 333px;
+    background-color: green;
+}
+
+.B {
+    transform-origin: -250px center;
+    animation: animB 6s infinite linear;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    border: 2px solid black;
+    position: absolute;
+    right: 500px;
+    top:333px;
+    background-color: rebeccapurple;
+}
+
+.C {
+    transform-origin: -350px center;
+    animation: animC 3s infinite linear;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    border: 2px solid black;
+    position: absolute;
+    right: 400px;
+    top:333px;
+    background-color: red;
+}
