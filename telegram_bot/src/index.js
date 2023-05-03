@@ -52,7 +52,10 @@ bot.on("message", (msg) => {
             break;
         case kb.home.films:
             bot.sendMessage(chatId, "Выберите жанр", {
-                reply_markup: {keyboard: keyboard.films}
+                reply_markup: {
+                    keyboard: keyboard.films,
+                    resize_keyboard: true,
+                }
             });
             break;
         case kb.film.comedy:
@@ -68,12 +71,16 @@ bot.on("message", (msg) => {
             bot.sendMessage(chatId, `Отправить местоположение`, {
                 reply_markup: {
                     keyboard: keyboard.cinemas,
+                    resize_keyboard: true,
                 },
             });
             break;
         case kb.back:
             bot.sendMessage(chatId, "Что хотите посмотреть?", {
-                reply_markup: {keyboard: keyboard.home}
+                reply_markup: {
+                    keyboard: keyboard.home,
+                    resize_keyboard: true,
+                }
             });
             break;
     }
@@ -84,11 +91,30 @@ bot.on("message", (msg) => {
     }
 });
 
+// bot.on(/\/pay/, msg => {
+//     bot.sendInvoice(
+//         msg.chat.id,
+//         "Your title",
+//         "Your discription",
+//         "Your payload",
+//         "401643678:TEST:207e3d18-af63-4c2f-b7c0-55a6a90115f5",
+//         "RUB",
+//         "test",
+//         [{
+//             "label": "Руб",
+//             "amount": 9900,
+//         }]
+//     );
+//     bot.answerPreCheckoutQuery(msg.chat.id);
+// });
+
+
 bot.onText(/\/start/, (msg) => {
     const text = `Здравствуйте, ${msg.chat.first_name}\nВыберите команду для начала работы:`;
     bot.sendMessage(helper.getChatId(msg), text, {
         reply_markup: {
             keyboard: keyboard.home,
+            resize_keyboard: true,
         }
     });
 });
@@ -255,6 +281,7 @@ function sendHTML(chatId, html, kbName = null) {
     if (kbName) {
         options["reply_markup"] = {
             keyboard: keyboard[kbName],
+            resize_keyboard: true,
         };
     };
     bot.sendMessage(chatId, html, options);
