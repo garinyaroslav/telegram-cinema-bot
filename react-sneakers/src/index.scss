@@ -35,20 +35,48 @@ header {
   }
 }
 
-.button {
-  border: 0;
-  background-color: #ffffff;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
+.cartEmpty { 
+  text-align: center;
+
+  p {
+    width: 200px;
+    line-height: 24px;
+  }
+
+  .greenButton { 
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
 }
 
 .search-block {
+  position: relative;
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+
+  .clear {
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    right: 15px;
+  }
   
   input {
     width: 200px;
@@ -59,7 +87,7 @@ header {
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
